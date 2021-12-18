@@ -21,8 +21,8 @@ const TodoItem = () => {
   const deleteItem = (index) => {
     console.log(index)
     const newList = cloneDeep(todoList)
-    const list = newList.filter((item, i) => i !== index)
-    setsTodoList(list)
+    newList.splice(index, 1)
+    setsTodoList(newList)
   }
 
   return (
@@ -31,7 +31,7 @@ const TodoItem = () => {
           <ul className='list'>
             {todoList.map((item, index) => {
               return (
-                <li>{item}<div className='delete' onClick={() => deleteItem(index)}><CloseOutlined style={{ marginLeft: '5px', fontSize: '16px', color: '#08c' }} /></div></li>
+                <li key={index}>{item}<div className='delete' onClick={() => deleteItem(index)}><CloseOutlined style={{ marginLeft: '5px', fontSize: '16px', color: '#08c' }} /></div></li>
               )
             })}
           </ul>
