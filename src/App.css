@@ -15,4 +15,16 @@
 .list {
   width: 90%;
   margin-top: 1.5rem;
+  padding-left: 0;
+}
+
+.list li {
+  list-style: none;
+}
+
+.delete {
+  display: inline-block;
+}
+.delete:hover{
+  cursor: pointer;
 }
